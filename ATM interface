@@ -1,0 +1,46 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner s=new Scanner(System.in);
+	    int balance_amt=1000000,withdraw_amt,deposit_amt;
+	    System.out.println("enter your choice");
+	    while(true)  
+        {  
+            System.out.println("Automated Teller Machine");  
+            System.out.println("1.Withdraw");  
+            System.out.println("2.Deposit");  
+            System.out.println("3.Check Balance");  
+            System.out.println("4.EXIT");  
+            System.out.print("Choose the operation you want to perform:");  
+             int choice = s.nextInt(); 
+             switch(choice){
+                 case 1:
+                     System.out.print("Enter amount to withdraw:");
+                     withdraw_amt=s.nextInt();
+                     if(balance_amt>=withdraw_amt)
+                     {
+                         balance_amt-=withdraw_amt;
+                     }
+                     else
+                     System.out.println("Insufficient Balance:"); 
+                     break;
+             
+             case 2:
+                 System.out.print("Enter amount to deposit:");
+                 deposit_amt=s.nextInt();
+                 balance_amt+=deposit_amt;
+                 break;
+             
+             case 3:
+                 
+                     System.out.println("Your balance is "+balance_amt);
+                     break;
+                 
+                 case 4:
+                     System.exit(0);
+                 
+             }    
+        }
+	}
+}
